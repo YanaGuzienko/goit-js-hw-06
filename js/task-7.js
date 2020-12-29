@@ -90,7 +90,10 @@ const users = [
 // Получить общую сумму баланса(поле balance) всех пользователей.
 
 const calculateTotalBalance = users => {
-  // твой код
+  const total = users.reduce(function (accumulator, user) {
+    return accumulator + user.balance;
+  }, 0);
+  return total;
 };
 
 console.log(calculateTotalBalance(users)); // 20916
