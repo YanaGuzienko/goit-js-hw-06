@@ -1,11 +1,15 @@
 'use strict';
-
+import users from './users.js';
 // Получить массив всех умений всех пользователей(поле skills),
 //   при этом не должно быть повторяющихся умений и
 // они должны быть отсортированы в алфавитном порядке.
 
 const getSortedUniqueSkills = users => {
-  // твой код
+  const array = users.flatMap(oneArr => oneArr.skills);
+  const uniq = array.filter(
+    (skill, index, arr) => arr.indexOf(skill) === index,
+  );
+  return uniq.sort();
 };
 
 console.log(getSortedUniqueSkills(users));
